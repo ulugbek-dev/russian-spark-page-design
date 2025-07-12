@@ -1,6 +1,6 @@
 
 import React, { useEffect, useState } from 'react';
-import { Play, ArrowRight, BarChart3, Users, Settings } from 'lucide-react';
+import { Play, ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 const Hero = () => {
@@ -94,64 +94,57 @@ const Hero = () => {
             className="relative"
             style={{ transform: `translateY(${scrollY * -0.05}px)` }}
           >
-            <div className="grid grid-cols-2 gap-4">
-              <div 
-                className="bg-white/60 backdrop-blur-sm p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-500 hover:scale-105 border border-white/20"
-                style={{ transform: `translateY(${scrollY * -0.02}px)` }}
-              >
-                <BarChart3 className="h-8 w-8 text-blue-600 mb-4" />
-                <div className="space-y-2">
-                  <div className="h-2 bg-blue-100 rounded-full">
-                    <div className="h-2 bg-blue-600 rounded-full w-3/4 animate-pulse" />
+            {/* Laptop Mockup */}
+            <div className="relative max-w-4xl mx-auto">
+              {/* Laptop Base */}
+              <div className="bg-gradient-to-b from-gray-800 to-gray-900 rounded-lg p-8 shadow-2xl transform perspective-1000 rotate-x-12">
+                {/* Screen */}
+                <div className="bg-white rounded-lg overflow-hidden shadow-inner">
+                  {/* Browser Header */}
+                  <div className="bg-gray-100 p-3 flex items-center gap-2 border-b">
+                    <div className="flex gap-2">
+                      <div className="w-3 h-3 bg-red-400 rounded-full"></div>
+                      <div className="w-3 h-3 bg-yellow-400 rounded-full"></div>
+                      <div className="w-3 h-3 bg-green-400 rounded-full"></div>
+                    </div>
+                    <div className="flex-1 bg-white rounded px-3 py-1 text-xs text-gray-500 ml-4">
+                      bizflow.app/dashboard
+                    </div>
                   </div>
-                  <div className="h-2 bg-gray-100 rounded-full">
-                    <div className="h-2 bg-gray-400 rounded-full w-1/2" />
+                  
+                  {/* CRM Interface */}
+                  <div className="aspect-[16/10] relative overflow-hidden">
+                    <img 
+                      src="/lovable-uploads/d8027224-f83e-4f5e-b334-2f9f23a8e2b6.png"
+                      alt="CRM Interface"
+                      className="w-full h-full object-cover object-top"
+                    />
+                    
+                    {/* Overlay for better integration */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-white/10 to-transparent pointer-events-none"></div>
                   </div>
+                </div>
+                
+                {/* Laptop Keyboard */}
+                <div className="mt-2 bg-gray-700 rounded-lg p-4">
+                  <div className="grid grid-cols-12 gap-1">
+                    {Array.from({ length: 48 }, (_, i) => (
+                      <div key={i} className="bg-gray-600 rounded h-2"></div>
+                    ))}
+                  </div>
+                  <div className="mt-2 bg-gray-600 rounded h-8 mx-auto w-32"></div>
                 </div>
               </div>
               
+              {/* Floating Elements */}
               <div 
-                className="bg-white/60 backdrop-blur-sm p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-500 hover:scale-105 mt-8 border border-white/20"
+                className="absolute -top-8 -right-8 w-16 h-16 bg-blue-500/20 rounded-full blur-xl animate-pulse"
                 style={{ transform: `translateY(${scrollY * 0.02}px)` }}
-              >
-                <Users className="h-8 w-8 text-purple-600 mb-4" />
-                <div className="flex space-x-2">
-                  <div className="w-6 h-6 bg-purple-200 rounded-full" />
-                  <div className="w-6 h-6 bg-blue-200 rounded-full" />
-                  <div className="w-6 h-6 bg-green-200 rounded-full" />
-                </div>
-              </div>
-              
+              ></div>
               <div 
-                className="bg-white/60 backdrop-blur-sm p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-500 hover:scale-105 -mt-4 border border-white/20"
-                style={{ transform: `translateY(${scrollY * 0.03}px)` }}
-              >
-                <Settings className="h-8 w-8 text-green-600 mb-4" />
-                <div className="space-y-2">
-                  <div className="flex justify-between text-sm">
-                    <span>Active</span>
-                    <span className="text-green-600">●</span>
-                  </div>
-                  <div className="flex justify-between text-sm">
-                    <span>Tasks</span>
-                    <span>12</span>
-                  </div>
-                </div>
-              </div>
-              
-              <div 
-                className="bg-white/60 backdrop-blur-sm p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-500 hover:scale-105 border border-white/20"
-                style={{ transform: `translateY(${scrollY * -0.01}px)` }}
-              >
-                <div className="w-8 h-8 bg-orange-100 rounded-lg mb-4 flex items-center justify-center">
-                  <div className="w-4 h-4 bg-orange-600 rounded" />
-                </div>
-                <div className="space-y-1">
-                  <div className="h-1 bg-gray-100 rounded" />
-                  <div className="h-1 bg-gray-100 rounded w-3/4" />
-                  <div className="h-1 bg-gray-100 rounded w-1/2" />
-                </div>
-              </div>
+                className="absolute -bottom-8 -left-8 w-12 h-12 bg-purple-500/20 rounded-full blur-xl animate-pulse"
+                style={{ transform: `translateY(${scrollY * -0.03}px)` }}
+              ></div>
             </div>
           </div>
         </div>
